@@ -134,7 +134,7 @@
       <p class="step-desc">Download de preview of vraag een offerte aan.</p>
       <div class="actions">
         <button class="btn btn-primary" id="download-btn">Preview downloaden</button>
-        <button class="btn btn-secondary" id="offerte-btn">Offerte aanvragen</button>
+        <button class="btn btn-secondary" id="offerte-btn">Kom in contact</button>
       </div>
       <div class="success-msg" id="success-msg">✓ Uw aanvraag is verstuurd. We nemen zo snel mogelijk contact op.</div>
     </div>
@@ -227,7 +227,7 @@
   document.getElementById('offerte-btn').addEventListener('click', () => {
     document.getElementById('success-msg').style.display = 'block';
     setTimeout(() => document.getElementById('success-msg').style.display = 'none', 4000);
-    window.location.href = 'mailto:lucas@oraltec.nl?subject=Offerte aanvraag gepersonaliseerde dental pod&body=Hallo Lucas, ik ben geïnteresseerd in een gepersonaliseerde dental pod met mijn eigen branding.';
+    window.location.href = 'https://www.oraltec.nl/contact';
   });
 </script>
 </body>
