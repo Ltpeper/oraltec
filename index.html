@@ -239,28 +239,22 @@ body.path-custom  .custom-only  { display:block; }
         <p class="step-desc">Laat uw gegevens achter &mdash; wij nemen binnen 24 uur contact op.</p>
 
         <div class="contact-form" id="form-o">
-          <div class="field-row-2">
-            <div class="field-row">
-              <label class="field-label">Voornaam *</label>
-              <input class="field-input" type="text" id="o-fname" placeholder="Jan">
-            </div>
-            <div class="field-row">
-              <label class="field-label">Achternaam *</label>
-              <input class="field-input" type="text" id="o-lname" placeholder="de Vries">
-            </div>
+          <div class="field-row">
+            <label class="field-label">Naam *</label>
+            <input class="field-input" type="text" id="o-fname" placeholder="Jan de Vries" oninput="prefillForms(this,'fname')">
           </div>
           <div class="field-row">
             <label class="field-label">E-mailadres *</label>
-            <input class="field-input" type="email" id="o-email" placeholder="jan@bedrijf.nl">
+            <input class="field-input" type="email" id="o-email" placeholder="jan@praktijk.nl" oninput="prefillForms(this,'email')">
             <span class="form-error" id="o-email-err">Vul een geldig e-mailadres in.</span>
           </div>
           <div class="field-row">
-            <label class="field-label">Bedrijfsnaam</label>
-            <input class="field-input" type="text" id="o-company" placeholder="Uw bedrijf B.V.">
+            <label class="field-label">Naam van de praktijk *</label>
+            <input class="field-input" type="text" id="o-company" placeholder="Tandartspraktijk de Vries" oninput="prefillForms(this,'company')">
           </div>
           <div class="field-row">
             <label class="field-label">Telefoonnummer</label>
-            <input class="field-input" type="tel" id="o-phone" placeholder="+31 6 12345678">
+            <input class="field-input" type="tel" id="o-phone" placeholder="+31 6 12345678" oninput="prefillForms(this,'phone')">
           </div>
           <div class="field-row">
             <label class="field-label">Opmerkingen of vragen</label>
@@ -388,28 +382,22 @@ body.path-custom  .custom-only  { display:block; }
         <p class="step-desc">Laat uw gegevens achter &mdash; wij nemen binnen 24 uur contact op.</p>
 
         <div class="contact-form" id="form-c">
-          <div class="field-row-2">
-            <div class="field-row">
-              <label class="field-label">Voornaam *</label>
-              <input class="field-input" type="text" id="c-fname" placeholder="Jan">
-            </div>
-            <div class="field-row">
-              <label class="field-label">Achternaam *</label>
-              <input class="field-input" type="text" id="c-lname" placeholder="de Vries">
-            </div>
+          <div class="field-row">
+            <label class="field-label">Naam *</label>
+            <input class="field-input" type="text" id="c-fname" placeholder="Jan de Vries" oninput="prefillForms(this,'fname')">
           </div>
           <div class="field-row">
             <label class="field-label">E-mailadres *</label>
-            <input class="field-input" type="email" id="c-email" placeholder="jan@bedrijf.nl">
+            <input class="field-input" type="email" id="c-email" placeholder="jan@praktijk.nl" oninput="prefillForms(this,'email')">
             <span class="form-error" id="c-email-err">Vul een geldig e-mailadres in.</span>
           </div>
           <div class="field-row">
-            <label class="field-label">Bedrijfsnaam</label>
-            <input class="field-input" type="text" id="c-company" placeholder="Uw bedrijf B.V.">
+            <label class="field-label">Naam van de praktijk *</label>
+            <input class="field-input" type="text" id="c-company" placeholder="Tandartspraktijk de Vries" oninput="prefillForms(this,'company')">
           </div>
           <div class="field-row">
             <label class="field-label">Telefoonnummer</label>
-            <input class="field-input" type="tel" id="c-phone" placeholder="+31 6 12345678">
+            <input class="field-input" type="tel" id="c-phone" placeholder="+31 6 12345678" oninput="prefillForms(this,'phone')">
           </div>
           <div class="field-row">
             <label class="field-label">Opmerkingen of vragen</label>
@@ -606,11 +594,10 @@ function validateEmail(email) {
 function submitForm(path) {
   var prefix = path === 'oraltec' ? 'o' : 'c';
   var fname  = document.getElementById(prefix+'-fname').value.trim();
-  var lname  = document.getElementById(prefix+'-lname').value.trim();
   var email  = document.getElementById(prefix+'-email').value.trim();
   var errEl  = document.getElementById(prefix+'-email-err');
 
-  if (!fname || !lname || !email) { alert('Vul uw naam en e-mailadres in.'); return; }
+  if (!fname || !email) { alert('Vul uw naam en e-mailadres in.'); return; }
   if (!validateEmail(email)) { errEl.style.display = 'block'; return; }
   errEl.style.display = 'none';
 
@@ -624,7 +611,7 @@ function submitForm(path) {
   btn.textContent = 'Versturen...';
 
   var data = new FormData();
-  data.append('Naam',         fname + ' ' + lname);
+  data.append('Naam',         fname);
   data.append('email',        email);
   data.append('Bedrijf',      document.getElementById(prefix+'-company').value.trim() || '-');
   data.append('Telefoon',     document.getElementById(prefix+'-phone').value.trim()   || '-');
@@ -661,6 +648,19 @@ document.getElementById('c-submit').addEventListener('click', function(){ submit
 
 render();
 updateSummaryInline();
+
+// ── Prefill: sync shared fields across both forms ─────────────────────────
+var PREFILL_FIELDS = ['fname','email','company','phone'];
+function prefillForms(sourceEl, field) {
+  PREFILL_FIELDS.forEach(function(f) {
+    if (f !== field) return;
+    var val = sourceEl.value;
+    ['o','c'].forEach(function(prefix) {
+      var el = document.getElementById(prefix+'-'+field);
+      if (el && el !== sourceEl) el.value = val;
+    });
+  });
+}
 </script>
 </body>
 </html>
