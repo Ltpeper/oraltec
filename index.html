@@ -10,28 +10,16 @@
 :root { --purple:#5409FF; --purple-light:#EAE0FF; --black:#0F0F0F; --gray:#6B6B6B; --light:#F8F8F8; --border:#E5E5E5; }
 body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); min-height:100vh; }
 
-/* ── PATH SELECTOR ── */
 .path-selector { max-width:1100px; margin:0 auto; padding:40px 40px 0; }
 .path-selector-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gray); margin-bottom:16px; }
-.path-cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:0; }
-.path-card {
-  border:2px solid var(--border); border-radius:16px; padding:20px 22px;
-  cursor:pointer; transition:all .2s; background:#fff; text-align:left;
-  position:relative; overflow:hidden;
-}
+.path-cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.path-card { border:2px solid var(--border); border-radius:16px; padding:20px 22px; cursor:pointer; transition:all .2s; background:#fff; text-align:left; position:relative; overflow:hidden; }
 .path-card:hover { border-color:var(--purple); box-shadow:0 4px 20px rgba(84,9,255,0.08); }
 .path-card.active { border-color:var(--purple); background:var(--purple-light); }
-.path-card.active .path-check { opacity:1; }
-.path-check {
-  position:absolute; top:14px; right:14px;
-  width:20px; height:20px; border-radius:50%; background:var(--purple);
-  display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .2s;
-}
+.path-check { position:absolute; top:14px; right:14px; width:20px; height:20px; border-radius:50%; background:var(--purple); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .2s; }
 .path-check::after { content:'✓'; color:white; font-size:11px; font-weight:700; }
-.path-badge {
-  display:inline-block; font-size:10px; font-weight:700; letter-spacing:.06em;
-  text-transform:uppercase; padding:3px 8px; border-radius:4px; margin-bottom:10px;
-}
+.path-card.active .path-check { opacity:1; }
+.path-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 8px; border-radius:4px; margin-bottom:10px; }
 .path-badge.oraltec { background:#E8F5E9; color:#2E7D32; border:1px solid #C8E6C9; }
 .path-badge.custom  { background:#EEF4FF; color:var(--purple); border:1px solid #C8DDFF; }
 .path-title { font-size:16px; font-weight:600; margin-bottom:4px; }
@@ -41,20 +29,11 @@ body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); mi
 .path-moq strong { color:var(--black); font-weight:600; }
 .path-price { font-size:15px; font-weight:700; color:var(--purple); }
 
-/* ── MAIN LAYOUT ── */
 .main { display:grid; grid-template-columns:1fr 1fr; max-width:1100px; margin:0 auto; padding:28px 40px 40px; gap:0; align-items:start; }
 .preview-section { position:sticky; top:40px; padding-right:60px; }
 .preview-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gray); margin-bottom:16px; }
 .canvas-wrapper { background:#fff; border-radius:20px; border:1px solid var(--border); overflow:hidden; display:flex; align-items:center; justify-content:center; min-height:380px; }
 .preview-note { text-align:center; margin-top:16px; font-size:12px; color:var(--gray); }
-
-/* Oraltec path notice */
-.oraltec-notice {
-  margin-left:40px; padding:14px 16px; background:#E8F5E9;
-  border-radius:10px; border:1px solid #C8E6C9; margin-bottom:0;
-}
-.oraltec-notice-title { font-size:14px; font-weight:600; color:#1B5E20; margin-bottom:4px; }
-.oraltec-notice-desc  { font-size:12px; color:#2E7D32; line-height:1.5; }
 
 .controls-section { display:flex; flex-direction:column; }
 .step { margin-bottom:0; }
@@ -81,6 +60,7 @@ body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); mi
 .preset-dot { width:26px; height:26px; border-radius:50%; cursor:pointer; border:2px solid transparent; transition:all .15s; }
 .preset-dot:hover { transform:scale(1.12); }
 .preset-dot.selected { border-color:var(--black) !important; }
+
 .upload-zone { margin-left:40px; border:2px dashed var(--border); border-radius:14px; padding:28px; text-align:center; cursor:pointer; transition:all .2s; position:relative; overflow:hidden; }
 .upload-zone:hover, .upload-zone.dragover { border-color:var(--purple); background:var(--purple-light); }
 .upload-zone input { position:absolute; inset:0; opacity:0; cursor:pointer; font-size:0; }
@@ -99,6 +79,7 @@ body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); mi
 .slider-row input[type=range] { flex:1; height:4px; border-radius:2px; background:var(--border); outline:none; -webkit-appearance:none; cursor:pointer; }
 .slider-row input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--purple); cursor:pointer; }
 .slider-val { font-size:12px; color:var(--gray); min-width:36px; text-align:right; }
+
 .pack-options { margin-left:40px; display:flex; flex-direction:column; gap:8px; }
 .pack-opt { display:flex; align-items:center; gap:14px; padding:12px 14px; border-radius:10px; border:1.5px solid var(--border); cursor:pointer; transition:all .15s; background:#fff; }
 .pack-opt:hover { border-color:var(--purple); }
@@ -110,6 +91,7 @@ body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); mi
 .pack-name { font-size:14px; font-weight:500; }
 .pack-desc { font-size:12px; color:var(--gray); margin-top:1px; }
 .pack-price { font-size:13px; font-weight:600; color:var(--gray); margin-left:auto; }
+
 .overleg-box { margin-left:40px; background:var(--light); border-radius:14px; padding:20px; border:1px solid var(--border); }
 .overleg-options { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
 .overleg-opt { display:flex; align-items:flex-start; gap:10px; }
@@ -117,30 +99,53 @@ body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--black); mi
 .overleg-opt label { font-size:13px; color:var(--black); cursor:pointer; line-height:1.4; }
 .overleg-opt label span { display:block; font-size:11px; color:var(--gray); margin-top:1px; }
 .overleg-note { font-size:12px; color:var(--purple); background:var(--purple-light); border-radius:8px; padding:10px 12px; border:1px solid #C8DDFF; line-height:1.5; }
-.actions { margin-left:40px; display:flex; gap:10px; flex-wrap:wrap; }
-.btn { padding:12px 24px; border-radius:10px; font-size:14px; font-weight:500; cursor:pointer; transition:all .15s; border:none; font-family:'DM Sans',sans-serif; }
-.btn-primary { background:var(--purple); color:white; }
-.btn-primary:hover { background:#3D00CC; }
-.btn-secondary { background:var(--light); color:var(--black); border:1px solid var(--border); }
-.btn-secondary:hover { background:var(--border); }
-.summary-box { margin-left:40px; margin-top:16px; padding:14px 16px; background:var(--light); border-radius:10px; border:1px solid var(--border); }
-.sum-row { display:flex; justify-content:space-between; font-size:13px; color:var(--gray); margin-bottom:4px; }
-.sum-row:last-child { margin-bottom:0; }
-.sum-row span:last-child { color:var(--black); font-weight:500; }
-.sum-highlight { border-top:1px solid var(--border); margin-top:8px; padding-top:8px; }
-.sum-highlight span:last-child { color:var(--purple); font-size:14px; }
-.success-msg { display:none; margin-left:40px; margin-top:12px; padding:10px 14px; background:#E8F5E9; border-radius:8px; font-size:13px; color:#2E7D32; }
 
-/* hide/show sections per path */
+/* ── CONTACT FORM ── */
+.contact-form { margin-left:40px; display:flex; flex-direction:column; gap:12px; }
+.field-row { display:flex; flex-direction:column; gap:5px; }
+.field-label { font-size:12px; font-weight:500; color:var(--gray); }
+.field-input, .field-textarea {
+  width:100%; padding:10px 14px; border-radius:8px;
+  border:1.5px solid var(--border); font-family:'DM Sans',sans-serif;
+  font-size:14px; color:var(--black); background:var(--light);
+  outline:none; transition:border-color .15s; resize:none;
+}
+.field-input:focus, .field-textarea:focus { border-color:var(--purple); background:white; }
+.field-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+.summary-inline { background:var(--light); border-radius:10px; padding:12px 14px; border:1px solid var(--border); font-size:12px; color:var(--gray); line-height:1.8; }
+.summary-inline strong { color:var(--black); }
+.sum-highlight-line { color:var(--purple); font-weight:600; }
+
+.btn-submit {
+  width:100%; padding:13px; border-radius:10px; background:var(--purple);
+  color:white; border:none; font-family:'DM Sans',sans-serif;
+  font-size:15px; font-weight:600; cursor:pointer; transition:all .15s;
+}
+.btn-submit:hover { background:#3D00CC; }
+.btn-submit:disabled { background:#aaa; cursor:not-allowed; }
+
+.download-link { margin-left:40px; }
+.btn-dl { padding:12px 24px; border-radius:10px; font-size:14px; font-weight:500; cursor:pointer; transition:all .15s; border:1px solid var(--border); background:var(--light); color:var(--black); font-family:'DM Sans',sans-serif; }
+.btn-dl:hover { background:var(--border); }
+
+.success-banner {
+  margin-left:40px; display:none; padding:16px 20px;
+  background:#E8F5E9; border-radius:12px; border:1px solid #C8E6C9;
+  text-align:center;
+}
+.success-banner-title { font-size:15px; font-weight:600; color:#1B5E20; margin-bottom:4px; }
+.success-banner-sub { font-size:13px; color:#2E7D32; }
+
+.form-error { font-size:12px; color:#E0005A; margin-top:4px; display:none; }
+
 .custom-only { display:none; }
 .oraltec-only { display:none; }
-body.path-oraltec .custom-only  { display:none; }
 body.path-oraltec .oraltec-only { display:block; }
 body.path-custom  .custom-only  { display:block; }
-body.path-custom  .oraltec-only { display:none; }
 
 @media(max-width:768px){
-  .path-cards { grid-template-columns:1fr; }
+  .path-cards,.field-row-2{grid-template-columns:1fr;}
   .main{grid-template-columns:1fr;}
   .preview-section{position:static;padding-right:0;margin-bottom:40px;}
   .main,.path-selector{padding:20px;}
@@ -149,11 +154,9 @@ body.path-custom  .oraltec-only { display:none; }
 </head>
 <body class="path-oraltec">
 
-<!-- PATH SELECTOR -->
 <div class="path-selector">
   <p class="path-selector-label">Kies uw type bestelling</p>
   <div class="path-cards">
-
     <div class="path-card active" id="card-oraltec" onclick="selectPath('oraltec')">
       <div class="path-check"></div>
       <div class="path-badge oraltec">Snel starten</div>
@@ -164,7 +167,6 @@ body.path-custom  .oraltec-only { display:none; }
         <div class="path-price">v.a. &euro;49,95/st</div>
       </div>
     </div>
-
     <div class="path-card" id="card-custom" onclick="selectPath('custom')">
       <div class="path-check"></div>
       <div class="path-badge custom">Volledig op maat</div>
@@ -175,14 +177,10 @@ body.path-custom  .oraltec-only { display:none; }
         <div class="path-price">v.a. &euro;54,60/st</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
-
-  <!-- LEFT: PREVIEW -->
   <div class="preview-section">
     <p class="preview-label">Live preview</p>
     <div class="canvas-wrapper">
@@ -191,11 +189,11 @@ body.path-custom  .oraltec-only { display:none; }
     <p class="preview-note">De preview is een indicatie. Het definitieve product kan licht afwijken.</p>
   </div>
 
-  <!-- RIGHT: CONTROLS -->
   <div class="controls-section">
 
-    <!-- ORALTEC PATH -->
+    <!-- ── ORALTEC PATH ── -->
     <div class="oraltec-only">
+
       <div class="step">
         <div class="step-header">
           <div class="step-num active">1</div>
@@ -204,18 +202,10 @@ body.path-custom  .oraltec-only { display:none; }
         </div>
         <p class="step-desc">Kies het type verpakking voor uw order.</p>
         <div class="pack-options">
-          <label class="pack-opt selected">
-            <input type="radio" name="packaging-o" value="standard" checked>
-            <div class="pack-radio"></div>
-            <div><div class="pack-name">Standaard verpakking</div><div class="pack-desc">Neutrale witte doos &mdash; geschikt voor wederverkoop</div></div>
-            <div class="pack-price">Incl.</div>
-          </label>
-          <label class="pack-opt">
-            <input type="radio" name="packaging-o" value="branded">
-            <div class="pack-radio"></div>
-            <div><div class="pack-name">Branded box</div><div class="pack-desc">Full-color bedrukking met uw huisstijl</div></div>
-            <div class="pack-price">+&euro;1,50/st</div>
-          </label>
+          <label class="pack-opt selected"><input type="radio" name="pack-o" value="Standaard verpakking" checked>
+            <div class="pack-radio"></div><div><div class="pack-name">Standaard verpakking</div><div class="pack-desc">Neutrale witte doos &mdash; geschikt voor wederverkoop</div></div><div class="pack-price">Incl.</div></label>
+          <label class="pack-opt"><input type="radio" name="pack-o" value="Branded box (+€1,50/st)">
+            <div class="pack-radio"></div><div><div class="pack-name">Branded box</div><div class="pack-desc">Full-color bedrukking met uw huisstijl</div></div><div class="pack-price">+&euro;1,50/st</div></label>
         </div>
       </div>
 
@@ -227,15 +217,15 @@ body.path-custom  .oraltec-only { display:none; }
           <span class="step-title">Extra maatwerk</span>
           <span class="step-tag opt">Optioneel</span>
         </div>
-        <p class="step-desc">Heeft u aanvullende wensen? Wij nemen contact op met een voorstel op maat.</p>
+        <p class="step-desc">Heeft u aanvullende wensen? Wij nemen contact op met een voorstel.</p>
         <div class="overleg-box">
           <div class="overleg-options">
             <div class="overleg-opt"><input type="checkbox" id="o-gravure"><label for="o-gravure">Gravure of bedrukking op het product<span>Tekst, logo of patroon direct op de pod</span></label></div>
             <div class="overleg-opt"><input type="checkbox" id="o-handleiding"><label for="o-handleiding">Gepersonaliseerde handleiding<span>In uw huisstijl, uw taal en met uw merk</span></label></div>
-            <div class="overleg-opt"><input type="checkbox" id="o-sleeve"><label for="o-sleeve">Sleeve of wikkel om de verpakking<span>Extra laag branding zonder doos te vervangen</span></label></div>
-            <div class="overleg-opt"><input type="checkbox" id="o-anders"><label for="o-anders">Iets anders<span>Vertel het ons in de offerteaanvraag</span></label></div>
+            <div class="overleg-opt"><input type="checkbox" id="o-sleeve"><label for="o-sleeve">Sleeve of wikkel om de verpakking<span>Extra laag branding</span></label></div>
+            <div class="overleg-opt"><input type="checkbox" id="o-anders"><label for="o-anders">Iets anders<span>Vertel het ons in het formulier</span></label></div>
           </div>
-          <div class="overleg-note">&#9432;&nbsp; Wij bespreken de mogelijkheden en kosten persoonlijk met u na uw aanvraag. Geen verplichtingen.</div>
+          <div class="overleg-note">&#9432;&nbsp; Wij bespreken mogelijkheden en kosten na uw aanvraag.</div>
         </div>
       </div>
 
@@ -246,22 +236,54 @@ body.path-custom  .oraltec-only { display:none; }
           <div class="step-num">3</div>
           <span class="step-title">Offerte aanvragen</span>
         </div>
-        <p class="step-desc">Vraag vrijblijvend een offerte aan. Reactie binnen 24 uur.</p>
-        <div class="summary-box">
-          <div class="sum-row"><span>Type</span><span>Oraltec branding</span></div>
-          <div class="sum-row"><span>Verpakking</span><span id="osum-pack">Standaard</span></div>
-          <div class="sum-row"><span>Extra maatwerk</span><span id="osum-extra">Geen</span></div>
-          <div class="sum-row sum-highlight"><span>MOQ &amp; prijs</span><span>25 st &mdash; v.a. &euro;49,95/st</span></div>
+        <p class="step-desc">Laat uw gegevens achter &mdash; wij nemen binnen 24 uur contact op.</p>
+
+        <div class="contact-form" id="form-o">
+          <div class="field-row-2">
+            <div class="field-row">
+              <label class="field-label">Voornaam *</label>
+              <input class="field-input" type="text" id="o-fname" placeholder="Jan">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Achternaam *</label>
+              <input class="field-input" type="text" id="o-lname" placeholder="de Vries">
+            </div>
+          </div>
+          <div class="field-row">
+            <label class="field-label">E-mailadres *</label>
+            <input class="field-input" type="email" id="o-email" placeholder="jan@bedrijf.nl">
+            <span class="form-error" id="o-email-err">Vul een geldig e-mailadres in.</span>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Bedrijfsnaam</label>
+            <input class="field-input" type="text" id="o-company" placeholder="Uw bedrijf B.V.">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Telefoonnummer</label>
+            <input class="field-input" type="tel" id="o-phone" placeholder="+31 6 12345678">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Opmerkingen of vragen</label>
+            <textarea class="field-textarea" id="o-notes" rows="3" placeholder="bijv. gewenste leveringsdatum, hoeveelheid, vragen..."></textarea>
+          </div>
+
+          <div class="summary-inline" id="o-summary-inline">
+            Samenvatting wordt hier geladen...
+          </div>
+
+          <button class="btn-submit" id="o-submit">Offerte aanvragen &rarr;</button>
         </div>
-        <div class="actions" style="margin-top:14px;">
-          <button class="btn btn-primary" id="offerte-btn-o">Offerte aanvragen</button>
+
+        <div class="success-banner" id="o-success">
+          <div class="success-banner-title">&#x2713; Aanvraag ontvangen!</div>
+          <div class="success-banner-sub">We nemen binnen 24 uur contact op via uw e-mailadres.</div>
         </div>
-        <div class="success-msg" id="success-msg-o">&#x2713; Uw aanvraag is verstuurd. We nemen zo snel mogelijk contact op.</div>
       </div>
     </div>
 
-    <!-- CUSTOM PATH -->
+    <!-- ── CUSTOM PATH ── -->
     <div class="custom-only">
+
       <div class="step">
         <div class="step-header">
           <div class="step-num active">1</div>
@@ -304,9 +326,7 @@ body.path-custom  .oraltec-only { display:none; }
         <p class="step-desc">PNG met transparante achtergrond werkt het beste.</p>
         <div class="upload-zone" id="upload-zone">
           <input type="file" id="logo-input" accept="image/*">
-          <div class="upload-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          </div>
+          <div class="upload-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
           <p class="upload-text">Sleep uw logo hierheen</p>
           <p class="upload-sub">of klik om te uploaden &middot; PNG, JPG, SVG</p>
         </div>
@@ -316,16 +336,8 @@ body.path-custom  .oraltec-only { display:none; }
           <button class="remove-btn" id="remove-logo-btn">&#x2715;</button>
         </div>
         <div class="slider-group">
-          <div class="slider-row">
-            <label>Grootte</label>
-            <input type="range" id="logo-size" min="10" max="60" value="30">
-            <span class="slider-val" id="size-val">30%</span>
-          </div>
-          <div class="slider-row">
-            <label>Transparantie</label>
-            <input type="range" id="logo-opacity" min="10" max="100" value="100">
-            <span class="slider-val" id="opacity-val">100%</span>
-          </div>
+          <div class="slider-row"><label>Grootte</label><input type="range" id="logo-size" min="10" max="60" value="30"><span class="slider-val" id="size-val">30%</span></div>
+          <div class="slider-row"><label>Transparantie</label><input type="range" id="logo-opacity" min="10" max="100" value="100"><span class="slider-val" id="opacity-val">100%</span></div>
         </div>
       </div>
 
@@ -339,18 +351,10 @@ body.path-custom  .oraltec-only { display:none; }
         </div>
         <p class="step-desc">Kies het type verpakking voor uw order.</p>
         <div class="pack-options">
-          <label class="pack-opt selected">
-            <input type="radio" name="packaging-c" value="standard" checked>
-            <div class="pack-radio"></div>
-            <div><div class="pack-name">Standaard verpakking</div><div class="pack-desc">Neutrale witte doos &mdash; geschikt voor wederverkoop</div></div>
-            <div class="pack-price">Incl.</div>
-          </label>
-          <label class="pack-opt">
-            <input type="radio" name="packaging-c" value="branded">
-            <div class="pack-radio"></div>
-            <div><div class="pack-name">Branded box</div><div class="pack-desc">Full-color bedrukking met uw huisstijl</div></div>
-            <div class="pack-price">+&euro;1,50/st</div>
-          </label>
+          <label class="pack-opt selected"><input type="radio" name="pack-c" value="Standaard verpakking" checked>
+            <div class="pack-radio"></div><div><div class="pack-name">Standaard verpakking</div><div class="pack-desc">Neutrale witte doos &mdash; geschikt voor wederverkoop</div></div><div class="pack-price">Incl.</div></label>
+          <label class="pack-opt"><input type="radio" name="pack-c" value="Branded box (+€1,50/st)">
+            <div class="pack-radio"></div><div><div class="pack-name">Branded box</div><div class="pack-desc">Full-color bedrukking met uw huisstijl</div></div><div class="pack-price">+&euro;1,50/st</div></label>
         </div>
       </div>
 
@@ -362,15 +366,15 @@ body.path-custom  .oraltec-only { display:none; }
           <span class="step-title">Extra maatwerk</span>
           <span class="step-tag opt">Optioneel</span>
         </div>
-        <p class="step-desc">Heeft u aanvullende wensen? Wij nemen contact op met een voorstel op maat.</p>
+        <p class="step-desc">Heeft u aanvullende wensen? Wij nemen contact op met een voorstel.</p>
         <div class="overleg-box">
           <div class="overleg-options">
             <div class="overleg-opt"><input type="checkbox" id="c-gravure"><label for="c-gravure">Gravure of bedrukking op het product<span>Tekst, logo of patroon direct op de pod</span></label></div>
             <div class="overleg-opt"><input type="checkbox" id="c-handleiding"><label for="c-handleiding">Gepersonaliseerde handleiding<span>In uw huisstijl, uw taal en met uw merk</span></label></div>
-            <div class="overleg-opt"><input type="checkbox" id="c-sleeve"><label for="c-sleeve">Sleeve of wikkel om de verpakking<span>Extra laag branding zonder doos te vervangen</span></label></div>
-            <div class="overleg-opt"><input type="checkbox" id="c-anders"><label for="c-anders">Iets anders<span>Vertel het ons in de offerteaanvraag</span></label></div>
+            <div class="overleg-opt"><input type="checkbox" id="c-sleeve"><label for="c-sleeve">Sleeve of wikkel om de verpakking<span>Extra laag branding</span></label></div>
+            <div class="overleg-opt"><input type="checkbox" id="c-anders"><label for="c-anders">Iets anders<span>Vertel het ons in het formulier</span></label></div>
           </div>
-          <div class="overleg-note">&#9432;&nbsp; Wij bespreken de mogelijkheden en kosten persoonlijk met u na uw aanvraag. Geen verplichtingen.</div>
+          <div class="overleg-note">&#9432;&nbsp; Wij bespreken mogelijkheden en kosten na uw aanvraag.</div>
         </div>
       </div>
 
@@ -381,20 +385,52 @@ body.path-custom  .oraltec-only { display:none; }
           <div class="step-num">5</div>
           <span class="step-title">Offerte aanvragen</span>
         </div>
-        <p class="step-desc">Download uw preview of vraag vrijblijvend een offerte aan.</p>
-        <div class="summary-box">
-          <div class="sum-row"><span>Type</span><span>Eigen white label</span></div>
-          <div class="sum-row"><span>Kleur</span><span id="sum-color">Wit &mdash; Standaard</span></div>
-          <div class="sum-row"><span>Logo</span><span id="sum-logo">Niet opgegeven</span></div>
-          <div class="sum-row"><span>Verpakking</span><span id="sum-pack">Standaard</span></div>
-          <div class="sum-row"><span>Extra maatwerk</span><span id="sum-extra">Geen</span></div>
-          <div class="sum-row sum-highlight"><span>MOQ &amp; prijs</span><span>100 st &mdash; v.a. &euro;54,60/st</span></div>
+        <p class="step-desc">Laat uw gegevens achter &mdash; wij nemen binnen 24 uur contact op.</p>
+
+        <div class="contact-form" id="form-c">
+          <div class="field-row-2">
+            <div class="field-row">
+              <label class="field-label">Voornaam *</label>
+              <input class="field-input" type="text" id="c-fname" placeholder="Jan">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Achternaam *</label>
+              <input class="field-input" type="text" id="c-lname" placeholder="de Vries">
+            </div>
+          </div>
+          <div class="field-row">
+            <label class="field-label">E-mailadres *</label>
+            <input class="field-input" type="email" id="c-email" placeholder="jan@bedrijf.nl">
+            <span class="form-error" id="c-email-err">Vul een geldig e-mailadres in.</span>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Bedrijfsnaam</label>
+            <input class="field-input" type="text" id="c-company" placeholder="Uw bedrijf B.V.">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Telefoonnummer</label>
+            <input class="field-input" type="tel" id="c-phone" placeholder="+31 6 12345678">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Opmerkingen of vragen</label>
+            <textarea class="field-textarea" id="c-notes" rows="3" placeholder="bijv. gewenste leveringsdatum, hoeveelheid, vragen..."></textarea>
+          </div>
+
+          <div class="summary-inline" id="c-summary-inline">
+            Samenvatting wordt hier geladen...
+          </div>
+
+          <div class="download-link" style="margin-left:0;">
+            <button class="btn-dl" id="download-btn" style="width:100%;margin-bottom:8px;">&#x2193; Preview downloaden</button>
+          </div>
+
+          <button class="btn-submit" id="c-submit">Offerte aanvragen &rarr;</button>
         </div>
-        <div class="actions" style="margin-top:14px;">
-          <button class="btn btn-primary" id="download-btn">Preview downloaden</button>
-          <button class="btn btn-secondary" id="offerte-btn-c">Offerte aanvragen</button>
+
+        <div class="success-banner" id="c-success">
+          <div class="success-banner-title">&#x2713; Aanvraag ontvangen!</div>
+          <div class="success-banner-sub">We nemen binnen 24 uur contact op via uw e-mailadres.</div>
         </div>
-        <div class="success-msg" id="success-msg-c">&#x2713; Uw aanvraag is verstuurd. We nemen zo snel mogelijk contact op.</div>
       </div>
     </div>
 
@@ -402,9 +438,14 @@ body.path-custom  .oraltec-only { display:none; }
 </div>
 
 <script>
-var FRONT_B64 = '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';
-var canvas = document.getElementById('preview-canvas');
-var ctx    = canvas.getContext('2d');
+// ── FORMSPREE ID ─────────────────────────────────────────────────────────
+// Vervang 'JOUW_FORMSPREE_ID' met uw eigen ID van formspree.io
+var FORMSPREE_ID = 'mjglbrod';
+
+// ── Canvas & product ──────────────────────────────────────────────────────
+var FRONT_B64  = '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';
+var canvas     = document.getElementById('preview-canvas');
+var ctx        = canvas.getContext('2d');
 var productImg = new Image();
 productImg.onload = render;
 productImg.src = 'data:image/webp;base64,' + FRONT_B64;
@@ -413,7 +454,7 @@ var logoImg     = null;
 var logoSize    = 30;
 var logoOpacity = 1.0;
 var currentPath = 'oraltec';
-var ZONE = { cx:406, cy:490, rx:168 };
+var ZONE        = { cx:406, cy:490, rx:168 };
 
 // ── Path selector ─────────────────────────────────────────────────────────
 function selectPath(path) {
@@ -421,7 +462,9 @@ function selectPath(path) {
   document.body.className = 'path-' + path;
   document.getElementById('card-oraltec').classList.toggle('active', path === 'oraltec');
   document.getElementById('card-custom').classList.toggle('active',  path === 'custom');
-  if (path === 'oraltec') { logoImg = null; render(); }
+  if (path === 'oraltec') { logoImg = null; }
+  render();
+  updateSummaryInline();
 }
 
 // ── Render ────────────────────────────────────────────────────────────────
@@ -431,14 +474,47 @@ function render() {
   ctx.drawImage(productImg,0,0,800,800);
   if (logoImg && currentPath === 'custom') {
     var maxW = (logoSize/100)*(ZONE.rx*2*0.80);
-    var lw = maxW, lh = lw/(logoImg.naturalWidth/logoImg.naturalHeight);
+    var lw   = maxW, lh = lw/(logoImg.naturalWidth/logoImg.naturalHeight);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
     ctx.globalAlpha = logoOpacity;
     ctx.drawImage(logoImg, ZONE.cx-lw/2, ZONE.cy-lh/2, lw, lh);
     ctx.globalAlpha = 1;
   }
-  updateSummary();
+  updateSummaryInline();
+}
+
+// ── Summary inline ────────────────────────────────────────────────────────
+function getExtra(prefix) {
+  var ids = [prefix+'-gravure', prefix+'-handleiding', prefix+'-sleeve', prefix+'-anders'];
+  var out = [];
+  ids.forEach(function(id) {
+    var cb = document.getElementById(id);
+    if (cb && cb.checked) out.push(cb.nextElementSibling.firstChild.textContent.trim());
+  });
+  return out.length ? out.join(', ') : 'Geen';
+}
+
+function updateSummaryInline() {
+  if (currentPath === 'oraltec') {
+    var pack = document.querySelector('input[name="pack-o"]:checked');
+    var el = document.getElementById('o-summary-inline');
+    if (el) el.innerHTML =
+      '<strong>Type:</strong> Oraltec branding<br>' +
+      '<strong>Verpakking:</strong> ' + (pack ? pack.value : '-') + '<br>' +
+      '<strong>Extra maatwerk:</strong> ' + getExtra('o') + '<br>' +
+      '<span class="sum-highlight-line"><strong>MOQ &amp; prijs:</strong> 25 st &mdash; v.a. €49,95/st</span>';
+  } else {
+    var pack2 = document.querySelector('input[name="pack-c"]:checked');
+    var el2 = document.getElementById('c-summary-inline');
+    if (el2) el2.innerHTML =
+      '<strong>Type:</strong> Eigen white label<br>' +
+      '<strong>Kleur:</strong> ' + document.getElementById('color-name').textContent + '<br>' +
+      '<strong>Logo:</strong> ' + (logoImg ? document.getElementById('logo-filename').textContent : 'Niet opgegeven') + '<br>' +
+      '<strong>Verpakking:</strong> ' + (pack2 ? pack2.value : '-') + '<br>' +
+      '<strong>Extra maatwerk:</strong> ' + getExtra('c') + '<br>' +
+      '<span class="sum-highlight-line"><strong>MOQ &amp; prijs:</strong> 100 st &mdash; v.a. €54,60/st</span>';
+  }
 }
 
 // ── Color ─────────────────────────────────────────────────────────────────
@@ -446,7 +522,7 @@ function applyColor(hex, name) {
   document.getElementById('swatch-bg').style.background = hex;
   document.getElementById('color-name').textContent = name;
   document.getElementById('color-hex').textContent = hex.toUpperCase();
-  updateSummary();
+  updateSummaryInline();
 }
 document.getElementById('color-input').addEventListener('input', function() {
   document.querySelectorAll('.preset-dot').forEach(function(d){ d.classList.remove('selected'); });
@@ -466,9 +542,9 @@ document.querySelectorAll('.preset-dot').forEach(function(dot) {
 var logoInput  = document.getElementById('logo-input');
 var uploadZone = document.getElementById('upload-zone');
 logoInput.addEventListener('change', function(e) { if (e.target.files[0]) processFile(e.target.files[0]); });
-uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('dragover'); });
-uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('dragover'); });
-uploadZone.addEventListener('drop', function(e) {
+uploadZone.addEventListener('dragover',  function(e){ e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', function(){ uploadZone.classList.remove('dragover'); });
+uploadZone.addEventListener('drop', function(e){
   e.preventDefault(); uploadZone.classList.remove('dragover');
   if (e.dataTransfer.files[0]) processFile(e.dataTransfer.files[0]);
 });
@@ -476,8 +552,7 @@ function processFile(file) {
   var reader = new FileReader();
   reader.onload = function(e) {
     var img = new Image();
-    img.onload = function() {
-      logoImg = img; render();
+    img.onload = function(){ logoImg = img; render();
       document.getElementById('logo-thumb').src = e.target.result;
       document.getElementById('logo-filename').textContent = file.name;
       document.getElementById('logo-strip').style.display = 'flex';
@@ -487,111 +562,105 @@ function processFile(file) {
   };
   reader.readAsDataURL(file);
 }
-document.getElementById('remove-logo-btn').addEventListener('click', function() {
+document.getElementById('remove-logo-btn').addEventListener('click', function(){
   logoImg = null; logoInput.value = '';
   document.getElementById('logo-strip').style.display = 'none';
   document.getElementById('num-2').classList.remove('active');
   render();
 });
-document.getElementById('logo-size').addEventListener('input', function() {
-  logoSize = +this.value; document.getElementById('size-val').textContent = this.value + '%'; render();
+document.getElementById('logo-size').addEventListener('input', function(){
+  logoSize = +this.value; document.getElementById('size-val').textContent = this.value+'%'; render();
 });
-document.getElementById('logo-opacity').addEventListener('input', function() {
-  logoOpacity = this.value/100; document.getElementById('opacity-val').textContent = this.value + '%'; render();
+document.getElementById('logo-opacity').addEventListener('input', function(){
+  logoOpacity = this.value/100; document.getElementById('opacity-val').textContent = this.value+'%'; render();
 });
 
 // ── Packaging ─────────────────────────────────────────────────────────────
-document.querySelectorAll('input[name="packaging-o"], input[name="packaging-c"]').forEach(function(r) {
-  r.addEventListener('change', function() {
-    var group = this.name;
-    document.querySelectorAll('input[name="'+group+'"]').forEach(function(x) {
+document.querySelectorAll('input[name="pack-o"], input[name="pack-c"]').forEach(function(r) {
+  r.addEventListener('change', function(){
+    document.querySelectorAll('input[name="'+this.name+'"]').forEach(function(x){
       x.closest('.pack-opt').classList.toggle('selected', x.checked);
     });
-    updateSummary();
+    updateSummaryInline();
   });
 });
 
 // ── Checkboxes ────────────────────────────────────────────────────────────
-document.querySelectorAll('.overleg-opt input[type=checkbox]').forEach(function(cb) {
-  cb.addEventListener('change', updateSummary);
+document.querySelectorAll('.overleg-opt input[type=checkbox]').forEach(function(cb){
+  cb.addEventListener('change', updateSummaryInline);
 });
 
-// ── Summary ───────────────────────────────────────────────────────────────
-var packLabels = { standard:'Standaard', branded:'Branded box (+€1,50)' };
-function updateSummary() {
-  if (currentPath === 'oraltec') {
-    var pv = document.querySelector('input[name="packaging-o"]:checked').value;
-    document.getElementById('osum-pack').textContent = packLabels[pv];
-    var extra = [];
-    ['o-gravure','o-handleiding','o-sleeve','o-anders'].forEach(function(id) {
-      var cb = document.getElementById(id);
-      if (cb && cb.checked) extra.push(cb.nextElementSibling.firstChild.textContent.trim());
-    });
-    document.getElementById('osum-extra').textContent = extra.length ? extra.join(', ') : 'Geen';
-  } else {
-    document.getElementById('sum-color').textContent = document.getElementById('color-name').textContent;
-    document.getElementById('sum-logo').textContent  = logoImg ? document.getElementById('logo-filename').textContent : 'Niet opgegeven';
-    var pv2 = document.querySelector('input[name="packaging-c"]:checked').value;
-    document.getElementById('sum-pack').textContent  = packLabels[pv2];
-    var extra2 = [];
-    ['c-gravure','c-handleiding','c-sleeve','c-anders'].forEach(function(id) {
-      var cb = document.getElementById(id);
-      if (cb && cb.checked) extra2.push(cb.nextElementSibling.firstChild.textContent.trim());
-    });
-    document.getElementById('sum-extra').textContent = extra2.length ? extra2.join(', ') : 'Geen';
-  }
-}
-
 // ── Download ──────────────────────────────────────────────────────────────
-document.getElementById('download-btn').addEventListener('click', function() {
+document.getElementById('download-btn').addEventListener('click', function(){
   var a = document.createElement('a');
   a.download = 'oraltec-preview.png';
   a.href = canvas.toDataURL('image/png');
   a.click();
 });
 
-// ── Offerte ───────────────────────────────────────────────────────────────
-function sendOfferte(path) {
-  var subject, body;
-  if (path === 'oraltec') {
-    var pack = document.querySelector('input[name="packaging-o"]:checked').value;
-    var extra = [];
-    ['o-gravure','o-handleiding','o-sleeve','o-anders'].forEach(function(id) {
-      var cb = document.getElementById(id);
-      if (cb && cb.checked) extra.push(cb.nextElementSibling.firstChild.textContent.trim());
-    });
-    subject = 'Offerte Oraltec White Label (25 stuks)';
-    body = 'Hallo,\n\nOfferte aanvraag Oraltec White Label:\n\n' +
-      '\u2022 Type: Oraltec branding\n' +
-      '\u2022 Verpakking: ' + pack + '\n' +
-      '\u2022 Extra maatwerk: ' + (extra.length ? extra.join(', ') : 'Geen') +
-      '\n\u2022 MOQ: 25 stuks, v.a. \u20ac49,95/st\n\nMet vriendelijke groet,';
-  } else {
-    var color = document.getElementById('color-hex').textContent;
-    var pack2 = document.querySelector('input[name="packaging-c"]:checked').value;
-    var extra2 = [];
-    ['c-gravure','c-handleiding','c-sleeve','c-anders'].forEach(function(id) {
-      var cb = document.getElementById(id);
-      if (cb && cb.checked) extra2.push(cb.nextElementSibling.firstChild.textContent.trim());
-    });
-    subject = 'Offerte Eigen White Label (100 stuks)';
-    body = 'Hallo,\n\nOfferte aanvraag Eigen White Label:\n\n' +
-      '\u2022 Type: Eigen branding\n' +
-      '\u2022 Kleur: ' + color + '\n' +
-      '\u2022 Logo: ' + (logoImg ? 'Ja, wordt apart aangeleverd' : 'Nee') + '\n' +
-      '\u2022 Verpakking: ' + pack2 + '\n' +
-      '\u2022 Extra maatwerk: ' + (extra2.length ? extra2.join(', ') : 'Geen') +
-      '\n\u2022 MOQ: 100 stuks, v.a. \u20ac54,60/st\n\nMet vriendelijke groet,';
-  }
-  window.location.href = 'mailto:info@oraltec.nl?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  var msgId = path === 'oraltec' ? 'success-msg-o' : 'success-msg-c';
-  document.getElementById(msgId).style.display = 'block';
-  setTimeout(function(){ document.getElementById(msgId).style.display = 'none'; }, 5000);
+// ── Form submit via Formspree ─────────────────────────────────────────────
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
-document.getElementById('offerte-btn-o').addEventListener('click', function() { sendOfferte('oraltec'); });
-document.getElementById('offerte-btn-c').addEventListener('click', function() { sendOfferte('custom'); });
+
+function submitForm(path) {
+  var prefix = path === 'oraltec' ? 'o' : 'c';
+  var fname  = document.getElementById(prefix+'-fname').value.trim();
+  var lname  = document.getElementById(prefix+'-lname').value.trim();
+  var email  = document.getElementById(prefix+'-email').value.trim();
+  var errEl  = document.getElementById(prefix+'-email-err');
+
+  if (!fname || !lname || !email) { alert('Vul uw naam en e-mailadres in.'); return; }
+  if (!validateEmail(email)) { errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+
+  var pack    = document.querySelector('input[name="pack-'+prefix+'"]:checked');
+  var summary = path === 'oraltec'
+    ? 'Type: Oraltec branding | Verpakking: ' + (pack ? pack.value : '-') + ' | Extra: ' + getExtra('o') + ' | MOQ: 25 st v.a. \u20ac49,95/st'
+    : 'Type: Eigen white label | Kleur: ' + document.getElementById('color-name').textContent + ' | Logo: ' + (logoImg ? document.getElementById('logo-filename').textContent : 'Nee') + ' | Verpakking: ' + (pack ? pack.value : '-') + ' | Extra: ' + getExtra('c') + ' | MOQ: 100 st v.a. \u20ac54,60/st';
+
+  var btn = document.getElementById(prefix+'-submit');
+  btn.disabled = true;
+  btn.textContent = 'Versturen...';
+
+  var data = new FormData();
+  data.append('Naam',         fname + ' ' + lname);
+  data.append('email',        email);
+  data.append('Bedrijf',      document.getElementById(prefix+'-company').value.trim() || '-');
+  data.append('Telefoon',     document.getElementById(prefix+'-phone').value.trim()   || '-');
+  data.append('Configuratie', summary);
+  data.append('Opmerkingen',  document.getElementById(prefix+'-notes').value.trim()   || '-');
+  data.append('_subject',     'Nieuwe offerteaanvraag - Oraltec White Label');
+
+  fetch('https://formspree.io/f/mjglbrod', {
+    method:  'POST',
+    body:    data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.ok) {
+      document.getElementById('form-'+prefix).style.display = 'none';
+      document.getElementById(prefix+'-success').style.display = 'block';
+    } else {
+      var msg = (json.errors && json.errors.length) ? json.errors.map(function(e){ return e.message; }).join(', ') : 'Onbekende fout';
+      alert('Fout: ' + msg + '. Probeer opnieuw of mail info@oraltec.nl');
+      btn.disabled = false;
+      btn.textContent = 'Offerte aanvragen \u2192';
+    }
+  })
+  .catch(function() {
+    alert('Geen verbinding. Controleer uw internet en probeer opnieuw.');
+    btn.disabled = false;
+    btn.textContent = 'Offerte aanvragen \u2192';
+  });
+}
+
+document.getElementById('o-submit').addEventListener('click', function(){ submitForm('oraltec'); });
+document.getElementById('c-submit').addEventListener('click', function(){ submitForm('custom'); });
 
 render();
+updateSummaryInline();
 </script>
 </body>
 </html>
